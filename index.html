@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My First Canvas</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #myCanvas {
+            border: dashed;
+            display: block;
+            margin: 10px auto auto auto;
+
+        }
+
+        header {
+            background-color: darkslategray;
+            color: white;
+            padding: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        h2 {
+
+            margin-left: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>Welcome to HTML5 Canvas</h1>
+</header>
+<main>
+    <section>
+        <h2>Drawing Squares</h2>
+    </section>
+    <section>
+        <canvas id="myCanvas" width='960' height="500">
+            <h2>My Fallback Content</h2>
+        </canvas>
+    </section>
+    <section>
+        <section>
+            <ul>
+                <li><a href="index.html">Home (plus drawing squares)</a></li>
+                <li><a href="lines.html">Lines</a></li>
+            </ul>
+        </section>
+</main>
+<script type="text/javascript">
+    window.onload = function(){
+        var canvas = document.getElementById('myCanvas');
+
+        if(canvas){
+            var context = canvas.getContext('2d');
+            if(context){
+
+                context.strokeStyle="blue";
+                context.lineWidth = 10;
+
+                context.strokeRect(100,100,250,200);
+
+                context.fillStyle="black";
+                context.fillRect(375,100,250,200);
+
+                context.fillStyle='black';
+                context.strokeStyle = 'green';
+                context.strokeRect(650,100,250,200);
+                context.fillRect(650,100,250,200);
+
+            }
+        }
+    };
+
+
+</script>
+</body>
+</html>
